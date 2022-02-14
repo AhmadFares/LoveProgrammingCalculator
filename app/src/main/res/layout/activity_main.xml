@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="466dp"
@@ -15,8 +16,8 @@
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31"
         app:srcCompat="@drawable/images" />
-
 
     <ImageView
         android:id="@+id/imageView7"
@@ -52,7 +53,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.995"
-        app:srcCompat="@drawable/Python" />
+        app:srcCompat="@drawable/pyhonnicon" />
 
     <ImageView
         android:id="@+id/icsharp"
@@ -140,7 +141,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner1"
-        app:layout_constraintVertical_bias="0.971"
+        app:layout_constraintVertical_bias="0.666"
         app:srcCompat="@drawable/java" />
 
     <ImageView
@@ -153,6 +154,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.995"
-        app:srcCompat="@drawable/Cicon" />
+        app:srcCompat="@drawable/download" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
