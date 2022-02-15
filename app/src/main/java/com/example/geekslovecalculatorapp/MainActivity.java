@@ -8,19 +8,25 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     EditText Name;
     TextView P;
+    TextView res;
     ImageView Java,Python,C,Csharp,Html,Php;
     Spinner spinner;
-    @Override
+    int count=0;
+    String finall = "Start:";
+    String [] Data= new String[20];
 
+    @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
         P=(TextView) findViewById(R.id.textView);
+        res=(TextView) findViewById(R.id.Results);
         Name=(EditText) findViewById(R.id.Username);
       //
         Python=(ImageView) findViewById(R.id.ipython);
@@ -45,11 +52,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner.setOnItemSelectedListener(this);
 
 
+        String[] items=new String[20];
+
+
 
     }
    ;
-
-
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long l) {
     String text= parent.getItemAtPosition(pos).toString();
@@ -61,10 +69,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
     public void Calculate(View V){
+        String[] arr= new String[20];
+
         Random rand = new Random();
         int i= rand.nextInt(101);
         String s= Name.getText().toString();
         String text = spinner.getSelectedItem().toString();
+
+
 
             if(s.matches("")) {
             P.setText("Error");
@@ -82,6 +94,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 Java.setAlpha(1.0F);
 
             P.setText(i + "%");
+
+             Data[count]= "Java :  " + i;
+                finall+= "\n"+ s + " : " + Data[count];
+             res.setText(finall);
+             count++;
+
         }
         else if(text.equals("Python")){
                 Java.setAlpha(0.0F);
@@ -92,7 +110,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 Python.setTranslationY(-2000);
                 Python.animate().translationYBy(2000).rotation(3600).setDuration(600);
                 Python.setAlpha(1.0F);
-            P.setText(i + "%");
+             P.setText(i + "%");
+                Data[count]= "Python :  " + i;
+                finall+= "\n"+ s + " : " + Data[count];
+                res.setText(finall);
+                count++;
+
         }
             else if(text.equals("C")){
                 Java.setAlpha(0.0F);
@@ -104,6 +127,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 C.animate().translationYBy(2000).rotation(3600).setDuration(600);
                 C.setAlpha(1.0F);
                 P.setText(i + "%");
+                Data[count]= "C :  " + i;
+                finall+= "\n"+ s + " : " + Data[count];
+                res.setText(finall);
+                count++;
+
             }
             else if(text.equals("C#")){
                 Java.setAlpha(0.0F);
@@ -115,6 +143,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 Csharp.animate().translationYBy(2000).rotation(3600).setDuration(600);
                 Csharp.setAlpha(1.0F);
                 P.setText(i + "%");
+                Data[count]= "C# : " + i;
+                finall+= "\n"+ s + " : " + Data[count];
+                res.setText(finall);
+                count++;
+
             }
             else if(text.equals("php")){
                 Java.setAlpha(0.0F);
@@ -126,6 +159,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 Php.animate().translationYBy(2000).rotation(3600).setDuration(600);
                 Php.setAlpha(1.0F);
                 P.setText(i + "%");
+                Data[count]= "php : " + i;
+                finall+= "\n"+ s + " : " + Data[count];
+                res.setText(finall);
+                count++;
             }
             else if(text.equals("html")){
                 Java.setAlpha(0.0F);
@@ -136,8 +173,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 Html.setTranslationY(-2000);
                 Html.animate().translationYBy(2000).rotation(3600).setDuration(600);
                 Html.setAlpha(1.0F);
-
                 P.setText(i + "%");
+                Data[count]= "Html : " + i;
+                finall+= "\n"+ s + " : " + Data[count];
+                res.setText(finall);
+                count++;
             }
+
     }
 }
