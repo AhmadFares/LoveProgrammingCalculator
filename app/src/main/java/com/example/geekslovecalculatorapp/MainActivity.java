@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Html=(ImageView) findViewById(R.id.ihtml);
         Php=(ImageView) findViewById(R.id.iphp);
         Java=(ImageView) findViewById(R.id.ijava);
-        Html.setTranslationY(1500);
+
 
         spinner= findViewById(R.id.spinner1);
         ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(this,R.array.Lang, android.R.layout.browser_link_context_header);
@@ -71,40 +71,49 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
           }
 
             else if(text.equals("Java")){
-                Java.setAlpha(1.0F);
+
                 Python.setAlpha(0.0F);
                 C.setAlpha(0.0F);
                 Csharp.setAlpha(0.0F);
                 Html.setAlpha(0.0F);
                 Php.setAlpha(0.0F);
+                Java.setTranslationY(-2000);
+                Java.animate().translationYBy(2000).rotation(3600).setDuration(600);
+                Java.setAlpha(1.0F);
 
             P.setText(i + "%");
         }
         else if(text.equals("Python")){
                 Java.setAlpha(0.0F);
-                Python.setAlpha(1.0F);
                 C.setAlpha(0.0F);
                 Csharp.setAlpha(0.0F);
                 Html.setAlpha(0.0F);
                 Php.setAlpha(0.0F);
+                Python.setTranslationY(-2000);
+                Python.animate().translationYBy(2000).rotation(3600).setDuration(600);
+                Python.setAlpha(1.0F);
             P.setText(i + "%");
         }
             else if(text.equals("C")){
                 Java.setAlpha(0.0F);
                 Python.setAlpha(0.0F);
-                C.setAlpha(1.0F);
                 Csharp.setAlpha(0.0F);
                 Html.setAlpha(0.0F);
                 Php.setAlpha(0.0F);
+                C.setTranslationY(-2000);
+                C.animate().translationYBy(2000).rotation(3600).setDuration(600);
+                C.setAlpha(1.0F);
                 P.setText(i + "%");
             }
             else if(text.equals("C#")){
                 Java.setAlpha(0.0F);
                 Python.setAlpha(0.0F);
                 C.setAlpha(0.0F);
-                Csharp.setAlpha(1.0F);
                 Html.setAlpha(0.0F);
                 Php.setAlpha(0.0F);
+                Csharp.setTranslationY(-2000);
+                Csharp.animate().translationYBy(2000).rotation(3600).setDuration(600);
+                Csharp.setAlpha(1.0F);
                 P.setText(i + "%");
             }
             else if(text.equals("php")){
@@ -113,6 +122,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 C.setAlpha(0.0F);
                 Csharp.setAlpha(0.0F);
                 Html.setAlpha(0.0F);
+                Php.setTranslationY(-2000);
+                Php.animate().translationYBy(2000).rotation(3600).setDuration(600);
                 Php.setAlpha(1.0F);
                 P.setText(i + "%");
             }
@@ -121,8 +132,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 Python.setAlpha(0.0F);
                 C.setAlpha(0.0F);
                 Csharp.setAlpha(0.0F);
-                Html.setAlpha(1.0F);
                 Php.setAlpha(0.0F);
+                Html.setTranslationY(-2000);
+                Html.animate().translationYBy(2000).rotation(3600).setDuration(600);
+                Html.setAlpha(1.0F);
+
                 P.setText(i + "%");
             }
     }
